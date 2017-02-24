@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Demos</title>
+    <script src="libs/p5.min.js"></script>
+    <script src="libs/p5.sound.min.js"></script>
+    <script>
+    var x= 30;
+        var y = 100;
+    var velocityX =1; 
+    var velocityY = 1; 
+    var song ; 
+    var amp;    
+    function setup(){
+        var canWidth = 500;
+        var canHeight = 500;
+        song = loadSound("Hendrix.mp3",callMeOnceLoad);
+        createCanvas(canWidth,canHeight);
+        background('black');
+        //console.log("i will call only once...");
+    }
+    function callMeOnceLoad(){
+        song.play();
+        amp = new p5.Amplitude();
+        
+    }    
+     var result = 1;   
+    function changeDirection(){
+        
+        if(amp){
+        result = amp.getLevel();
+        console.log("Amp ",result);    
+        }
+        
+        if(x>=width){
+            velocityX = result * -1000;
+        }
+        else
+        if(x<=0){
+            velocityX = result * 1000;
+        } 
+        if(y>=height){
+            velocityY  = result  * -1000;
+        }
+        if(y<=0){
+            velocityY = result * 1000;
+        }
+        document.getElementById("score").innerHTML = result;
+    }    
+    function draw(){
+        background('black');
+        fill('red');
+        ellipse(100,100,50 + 100* result,50);
+        fill((random(255),random(255),random(255)));
+        ellipse(x,y,50,50);
+        
+            changeDirection();
+        
+        x = x + velocityX;
+        y = y + velocityY;
+        //rect(100,100,50,50);
+        //console.log("I will call again and again...");
+    }    
+        
+        
+    </script>
+</head>
+<body>
+    <div id="score">
+        
+    </div>
+</body>
+</html>

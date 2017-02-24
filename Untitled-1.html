@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>moving ball</title>
+    
+    <script src="libs/p5.min.js"></script>
+    <script src="libs/p5.sound.min.js"></script>
+    <script>
+        
+        var song;
+       // var amp;
+        
+//function preload() {
+    
+//}
+    
+  
+        
+        function setup(){
+            
+            var canWidth=500;
+            var canHeight=500;
+            song = loadSound('libs/Hendrix.mp3',callMeOnceLoad);
+            createCanvas(canWidth,canHeight);
+            
+            background('black');
+               
+            
+            //document.Write("i will call you only once");
+            //document.getElementById
+        }
+        
+        
+        
+       function callMeOnceLoad()
+        {
+          song.play();
+ //amp=new p5.Amplitude();
+
+        }
+    
+       function draw(){
+            //background('black');
+            fill('red');
+            ellipse(100,100,100,100);
+           fill('yellow');
+           ellipse(100,100,50,50);
+           
+           
+           
+            
+        }
+    
+    
+    
+    
+    
+    </script>
+    
+    
+</head>
+<body>
+    
+</body>
+</html>

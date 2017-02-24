@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Demos</title>
+    <script src="libs/p5.min.js"></script>
+    <script>
+        var x=30;
+        var velocityX=1;
+        var velocityY=1;
+        var sound;
+    function setup(){
+        var canWidth=500;
+        var canHeight=500;
+        
+        
+        createCanvas(canWidth,canHeight);
+        background('black');
+        
+        //song = loadSound('assets/lucky_dragons_-_power_melody.mp3',callMeOnceLoad);
+  createCanvas(720, 200);
+  background(255,0,0);
+}
+   // console.log("i will call only once...");
+    }
+        function draw(){
+            background('black');
+            fill((random(255)))
+            fill('yellow');
+            ellipse(x,100,50,50);
+            if(x>=width)
+                {
+                    velocityX=random(-30);
+                }
+            else{
+                velocityX=random(30);
+                
+            }
+             x=x+velocityX;
+            //ellipse(mouseX,mouseY,50,50);
+            //ellipse(100,100,50,50);
+            //rect(100,100,50,50); //x,y,width,height
+            //console.log("I will call again and again");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
